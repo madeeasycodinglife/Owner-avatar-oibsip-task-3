@@ -1,0 +1,32 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/atm</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+
+        <!-- Echo the SQL to stdout -->
+        <property name="show_sql">false</property>
+
+        <!-- Set the current session context -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">false</property>
+
+        <!-- Entity mapping -->
+        <mapping class="com.madeeasy.entity.User"/>
+        <mapping class="com.madeeasy.entity.Account"/>
+        <mapping class="com.madeeasy.entity.TransactionEntity"/>
+    </session-factory>
+
+</hibernate-configuration>
